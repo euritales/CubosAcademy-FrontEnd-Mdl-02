@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <div>
+            <label for="txtNome">nome</label>
+            <input type="text" id="txtNome"/>
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+<script>
+    const form = document.querySelector('form');
+    const nome = document.querySelector('#txtNome');
+
+    form.addEventListener('submit', validarNome);  
+
+    function validarNome(event){        
+        removerErro(nome);
+        
+        const inicial = nome.value.charAt(0);
+        if(inicial === inicial.toLowerCase()){
+            colocarErro(nome);
+            event.preventDefault();
+        } 
+    }
+
+    function removerErro(elemento){
+        elemento.style.boxShadow = "none";
+    }
+
+    function colocarErro(elemento){
+        elemento.style.boxShadow = "0px 0px 0px 2px red";
+    }
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <div>
+        <label for="txtNome">Nome</label>
+        <input type="text" id="txtNome">
+    </div>
+    <div>
+        <label for="drpFruta">Fruta favorita:</label>
+        <select id="drpFruta">
+            <option value="">Selecione</option>
+            <option value="Banana">Banana</option>
+            <option value="Morango">Morango</option>
+            <option value="maçã">Maça</option>
+        </select>
+    </div>
+    <div style="display: none; color: red;" class="mensagem">
+        fruta errada...
+
+    </div>
+</body>
+<script>
+    const nome = document.querySelector('#txtNome');
+    const fruta = document.querySelector('#drpFruta');
+    const mensagem = document.querySelector('.mensagem');
+    
+    fruta.addEventListener('change', verificarFruta);
+
+    function verificarFruta({
+        target: select
+    }){
+
+        if(!select.value){
+            mensagem.style.display = "none";
+            return;
+        }
+        mensagem.style.display = "block";
+
+        if(select.value != 'Morango'){
+            mensagem.style.color = "red";
+            mensagem.innerText = `Fruta errada, ${nome.value}...`;
+            return;
+        }
+        mensagem.style.color = "green";
+        mensagem.innerText = `Fruta correta, ${nome.value}!`;
+    }
+
+</script>
+</html>

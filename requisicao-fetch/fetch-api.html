@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Fetch</title>
+</head>
+<body>
+    asdas
+</body>
+<script>
+    const body = {
+        userId: 1,
+        id: 1,
+        title: "delectus aut autem",
+        completed: false
+    }
+
+    fetch('https://jsonplaceholder.typicode.com/todos/',{
+        method:'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            //mime type
+        },
+        body: JSON.stringify(body),
+    }) //passar uma url, por padrao uma requisição e options
+    .then(resposta =>{
+        if(resposta.ok){
+            console.log('Sucesso');
+            return resposta.json();
+        }else{
+            console.log('Erro');
+        }
+    })// Response. para pegar o body, temos que chamar o .json, pra trazer em objeto JS
+    .then(data => console.log(data))//ele retorna outra promise, então a gente pode manipular os dados
+    .catch(err => console.log('Erro',err)); // os erros so caem no catch quando sao erros na API fetch. Os retornos sempre darão okay
+
+</script>
+</html>

@@ -1,0 +1,1 @@
+exemplo.addEventListener  - serve para criar evento a um elemento. Ex:input.addEventListener('input', (event));

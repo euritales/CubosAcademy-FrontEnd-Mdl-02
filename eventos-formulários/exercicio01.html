@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <button type="button">Contando</button>
+</body>
+
+<script>
+    const botao = document.querySelector('button');
+
+
+    let icont = 0;
+
+    function conteMais(){
+        alert('Conte mais um pouco...');
+        icont ++;
+        if(icont === 10){
+            botao.removeEventListener('click', conteMais);
+        }    
+    }
+    function parabens (){
+        if(icont >= 10){
+            alert('Parabens! Você terminou a contagem.');
+        }
+    }
+    
+    botao.addEventListener('click', conteMais);
+    botao.addEventListener('click', parabens);
+</script>
+</html>

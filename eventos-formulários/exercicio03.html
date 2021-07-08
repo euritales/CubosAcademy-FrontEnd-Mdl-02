@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+</style>
+<body>
+    <input type="text" id="txtFiltro" placeholder="Busca"/>
+    <ul class="produtos">
+        <li class="pizza calabresa">Pizza de calabresa</li>
+        <li class="hamburger">X-Burguer</li>
+        <li class="pizza Frango">Pizza de Frango com Catupiry</li>
+        <li class="arabe">Esfiha</li>
+        <li class="japonesa">Temaki</li>
+        <li class="hamburger salada">X-Salada</li>
+        <li class="japonesa">Sushi</li>
+        <li class="arabe">Shwarma</li>
+    </ul>
+
+</body>
+<script>
+    const input = document.querySelector('input');
+    const produtos = document.querySelectorAll('li');
+
+    input.addEventListener('input', (event) => {
+        produtos.forEach(produto =>{
+            const produtoFiltrado = produto.className.includes(event.target.value);
+            produto.style.display = produtoFiltrado ? 'list-item' : 'none';
+        })
+    });
+</script>
+</html>

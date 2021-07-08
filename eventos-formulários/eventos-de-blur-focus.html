@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="txtEmail">Email</label>
+        <input type="email" id="txtEmail"/>
+    </div>
+    <div>
+        <label for="txtSenha">Senha</label>
+        <input type="password" id="txtSenha" />
+    </div>
+
+    
+</body>
+<script>
+    const email = document.querySelector('#txtEmail');
+    const password = document.querySelector('#txtSenha');
+
+    email.addEventListener('blur', validarEmail);
+    password.addEventListener('focus',validarSenha);
+
+    function validarEmail({ target, target: {value} }){
+        removerErro(target);
+
+        if(!value.includes("@")) colocarErro(target);
+    }
+
+    function validarSenha({ target, target: {value} }){
+        removerErro(target);
+
+        if(!value.length < 8) colocarErro(target);
+    }
+
+    function removerErro(elemento){
+        elemento.style.boxShadow = "none";
+    }
+
+    function colocarErro(elemento){
+        elemento.style.boxShadow = "0px 0px 0px 2px red";
+    }
+
+</script>
+</html>

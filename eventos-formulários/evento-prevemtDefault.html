@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    input:checked{
+        box-shadow: 0 0 0 2px red;
+    }
+</style>
+
+<body>
+    <h3>Generos musicais:</h3>
+    <form >
+        <div>
+            <label for="ckbRock">Rock</label>
+            <input type="checkbox" name="rock" id="ckbRock" value="rock"/>
+            <label for="ckbSamba">Samba</label>
+            <input type="checkbox" name="Samba" id="ckbSamba" value="samba"/>
+            <label for="ckbPop">Pop</label>
+            <input type="checkbox" name="pop" id="ckbPop" value="pop"/>
+        </div>
+    </form>
+</body>
+<script>
+    const checkbox = document.querySelectorAll('input');
+    
+    checkbox.forEach(checkbox => {
+       // checkbox;addEventListener('click', event => event.preventDefault());
+    });
+</script>
+</html>
